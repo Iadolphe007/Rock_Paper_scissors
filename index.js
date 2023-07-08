@@ -15,6 +15,8 @@ function playRound(playerSelection, computerSelection){
     if (playerChoice === computerChoice)
     {
         return ("It's a tie")
+    }else if(!playerChoice){
+        return("No choice made")
     } else if(
         (playerChoice === "rock" && computerChoice === "scissors") ||
         (playerChoice === "paper" && computerChoice=== "rock") ||
@@ -37,11 +39,6 @@ function game(){
         const result = playRound(playerSelection, computerSelection);
 
         console.log(result);
-        // if (!playerSelection){
-        //     break
-        //     return ("No choice provided")
-        // }
-
         if (result.includes('win')) {
             playerScore++
         } else if (result.includes('lose')) {
@@ -52,7 +49,7 @@ function game(){
         console.log("Congratulations! You won the game!");   
     } else if(playerScore < computerScore){
         console.log("Sorry! You lost the game.");
-    } else if(computerScore == playerScore){
+    } else{
         console.log("it's a tie")
     }
 }
