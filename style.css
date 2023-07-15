@@ -9,38 +9,47 @@ body{
 
 .content{
     background-color: aqua;
-    width: 800px;
-    height: 400px;
-    /* display: block;
-    margin: auto; */
-    margin-top: 12%;
-    margin-left: 25%;
-    
+    width: 900px;
+    height: 450px;
+    margin-top: 10%;
+    margin-left: 22%;
+    display: flex;
 }
 
 .control{
     display: flex;
-    border: solid red;
     flex-direction: column;
-    /* margin: 10px; */
-    background-color: beige;
     width: 150px;
     align-items: center;
     padding: 10px;
     margin-top: 20px;
 }
+
+h3{
+    color: rgba(165, 4, 93, 0.467);
+    text-shadow: rgba(0, 0, 0, 0.5);
+    font-style: italic;
+    font-size: large;
+}
 button{
-    /* background-color: black;
-    padding: 5px;
-    color: red;
-    display: flex;
-    flex-direction: column;
-    margin: 20px 10px;
-    width: 100px; */
     padding: 10px 20px;
     margin: 10px;
     border: 2px solid rgb(250, 214, 214);
     background-color: rgb(83, 83, 251);
     border-radius: 5px;
     width: 120px;
+}
+
+#start{
+    background-color: rgb(207, 44, 4);
+    width: 150px;
+    margin-top: 40px;
+}
+#result{
+    border: solid black;
+    margin: 60px;
+    height: 320px;
+    background-color: red;
+    display: inline-block;
+    flex: 1;
 }
