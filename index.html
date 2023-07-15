@@ -10,13 +10,17 @@
 <body>
    <div class="content">
     <div class="control">
-        <h3>Pick</h3>
-        <button id="rock">ROCK</button>
-        <button id="paper">PAPER</button>
-        <button id="scissor">SCISSORS</button>
-        <button id="start">START GAME</button>
+        <h3>Pick One</h3>
+        <button id="rock" onclick="rockSel()">ROCK</button>
+        <button id="paper" onclick="paperSel()">PAPER</button>
+        <button id="scissor" onclick="scissorSel()">SCISSORS</button>
+        <button id="start" onclick="startGame()">START GAME</button>
     </div>
-    <div id="result"></div>
+    <div id="result">
+        <div id="c-score">computer score:</div>
+        <div id="p-score">player score:</div>
+        <div id="winner"></div>
+    </div>
    </div>
 </body>
 </html>
