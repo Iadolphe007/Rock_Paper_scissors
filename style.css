@@ -49,7 +49,6 @@ button{
     border: solid black;
     margin: 60px;
     height: 320px;
-    background-color: red;
     display: inline-block;
     flex: 1;
 }
