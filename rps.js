@@ -1,51 +1,72 @@
-const DEFAULT_CHOICE = 'rock'
-const currentChoice = DEFAULT_CHOICE
+// const DEFAULT_CHOICE = 'rock'
+// const currentChoice = DEFAULT_CHOICE
 
 const rockBtn = document.getElementById('rock')
 const paperBtn = document.getElementById('paper')
 const scissorBtn = document.getElementById('scissor')
 const startBtn = document.getElementById('start')
-const comSec = document.getElementById('comment')
+const resultDiv = document.getElementById('comment')
+const pScore = document.getElementById('p-score')
+const cScore = document.getElementById('c-score')
 const choice = ['rock', 'paper', 'scissors']
-let playerSelection = ''
+
+rockBtn.addEventListener('click',playerChoice)
+paperBtn.addEventListener('click',playerChoice)
+scissorBtn.addEventListener('click', playerChoice)
 
 
-function playerChoice(newChoice){
-    activateButton(newChoice)
-    currentChoice = newChoice 
+let computerScore = 0
+let playerScore = 0
+let round = 0
+
+// function playerChoice(newChoice){
+//     activateButton(newChoice)
+//     currentChoice = newChoice 
+// }
+
+// function randomComputerChoice(){
+//     const randomChoice = Math.floor(Math.random() * choice.length)
+//     return choice[randomChoice]
+// }
+
+// rockBtn.onclick = () => PlayerChoice('rock')
+// paperBtn.onclick = () => PlayerChoice('paper')
+// scissorBtn.onclick = () => PlayerChoice('scissors')
+// startBtn.onclick = () => clear()
+
+function rockSel(){
+    console.log('clicked rock')
 }
 
-function randomComputerChoice(){
-    const randomChoice = Math.floor(Math.random() * choice.length)
-    return choice[randomChoice]
+function paperSel(){
+    console.log('clicked paper')
 }
 
-rockBtn.onclick = () => PlayerChoice('rock')
-paperBtn.onclick = () => PlayerChoice('paper')
-scissorBtn.onclick = () => PlayerChoice('scissors')
-startBtn.onclick = () => clear()
+function scissorSel(){
+    console.log('cliked scissor')
+}
 
-function activateButton(newChoice){
-    if(currentChoice === 'rock') {
-        rockBtn.classList.remove('active')
-      } else if(currentChoice === 'paper') {
-        paperBtn.classList.remove('active')
-      } else if(currentChoice === 'scissor') {
-        scissorBtn.classList.remove('active')
-      } else if(currentChoice === 'start'){
-        startBtn.classList.remove('active')
-      }
+// function activateButton(newChoice){
+//     if(currentChoice === 'rock') {
+//         rockBtn.classList.remove('active')
+//       } else if(currentChoice === 'paper') {
+//         paperBtn.classList.remove('active')
+//       } else if(currentChoice === 'scissor') {
+//         scissorBtn.classList.remove('active')
+//       } else if(currentChoice === 'start'){
+//         startBtn.classList.remove('active')
+//       }
     
-      if(newChoice === 'rock') {
-        rockBtn.classList.add('active')
-      } else if(newChoice === 'paper') {
-        paperBtn.classList.add('active')
-      } else if(newChoice === 'scissor') {
-        scissorBtn.classList.add('active')
-      } else if(newChoice === 'start'){
-        startBtn.classList.remove('active')
-      }
-}
+//       if(newChoice === 'rock') {
+//         rockBtn.classList.add('active')
+//       } else if(newChoice === 'paper') {
+//         paperBtn.classList.add('active')
+//       } else if(newChoice === 'scissor') {
+//         scissorBtn.classList.add('active')
+//       } else if(newChoice === 'start'){
+//         startBtn.classList.remove('active')
+//       }
+// }
 
 function playRound(playerSelection, computerSelection){
     // const playerSelection = playerSelection
@@ -100,9 +121,13 @@ function startGame(){
 
 
 }
+function playerChoice(e){
+    let playerSelection = (e.target.id)
+    Game(playerSelection, computerSelection)
+}
 
-function clear(){
-    console.log("clicked")
+function startGame(){
+    window.location.reload();
 }
 
 startGame()
